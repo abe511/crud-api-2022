@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.server = void 0;
 const http_1 = require("http");
 const uuid_1 = require("uuid");
 const dotenv = __importStar(require("dotenv"));
@@ -38,7 +39,7 @@ const u3 = new user_1.default("jessie", 25, ["singing", "dancing"]);
 const u4 = new user_1.default("jake", 35, []);
 DB.push(u1, u2, u3, u4);
 // ********************************
-const server = (0, http_1.createServer)((req, res) => {
+exports.server = (0, http_1.createServer)((req, res) => {
     var _a;
     const path = (_a = req.url) === null || _a === void 0 ? void 0 : _a.split("/");
     const userId = path === null || path === void 0 ? void 0 : path.pop();
@@ -118,6 +119,6 @@ const server = (0, http_1.createServer)((req, res) => {
             (0, utils_1.respond)(res, 404);
     }
 });
-server.listen(PORT, () => {
+exports.server.listen(PORT, () => {
     console.log(`http server started on port: ${PORT}`);
 });

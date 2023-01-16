@@ -18,7 +18,7 @@ const u4 = new User("jake", 35, []);
 DB.push(u1, u2, u3, u4);
 // ********************************
 
-const server = createServer((req: IncomingMessage, res: ServerResponse) => {
+export const server = createServer((req: IncomingMessage, res: ServerResponse) => {
 
     const path = req.url?.split("/");
     const userId = path?.pop();
