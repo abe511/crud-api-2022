@@ -13,5 +13,9 @@
     "noImplicitAny": true,                               /* Enable error reporting for expressions and declarations with an implied 'any' type. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "exclude": ["./build.mjs"]
+  "exclude": ["./build.mjs", "./coverage", "__tests__", "jest.config.js"],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true
+  },
 }
